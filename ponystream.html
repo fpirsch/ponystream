@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PonyStream demo</title>
+        <meta name="viewport" content="width=device-width">
+        <link href='https://fonts.googleapis.com/css?family=Emilys+Candy' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                font-family: 'Emilys Candy', cursive;
+                color: #913D88;
+            }
+            #ponies {
+                position: relative;
+                width: 500px;
+                height: 300px;
+                overflow: hidden;
+                background-color: #f1a9a0;
+                background: radial-gradient(center 180% 0deg, circle, rgba(153, 0, 255, 0) 0%, #9900ff 40%, #4400ff 50%, #0099ff 60%, #00ff00 70%, #ffee00 80%, #ff6600 90%, #ff0000 100%);
+                background: -moz-radial-gradient(center 180% 0deg, circle, rgba(153, 0, 255, 0) 0%, #9900ff 40%, #4400ff 50%, #0099ff 60%, #00ff00 70%, #ffee00 80%, #ff6600 90%, #ff0000 100%);
+                background: -webkit-radial-gradient(center 180% 0deg, circle, rgba(153, 0, 255, 0) 0%, #9900ff 40%, #4400ff 50%, #0099ff 60%, #00ff00 70%, #ffee00 80%, #ff6600 90%, #ff0000 100%);
+                background: -ms-radial-gradient(center 180% 0deg, circle, rgba(153, 0, 255, 0) 0%, #9900ff 40%, #4400ff 50%, #0099ff 60%, #00ff00 70%, #ffee00 80%, #ff6600 90%, #ff0000 100%);
+                background: -o-radial-gradient(center 180% 0deg, circle, rgba(153, 0, 255, 0) 0%, #9900ff 40%, #4400ff 50%, #0099ff 60%, #00ff00 70%, #ffee00 80%, #ff6600 90%, #ff0000 100%);
+            }
+            #controls {
+                position: relative;
+                width: 500px;
+                text-align: center;
+                margin: 1em 0;
+            }
+            button {
+                margin: 0 2em;
+            }
+        </style>
+        <script src="ponystream.js"></script>
+    </head>
+    <body>
+        <h1>PonyStream demo</h1>
+        <div id="ponies"></div>
+        <div id="controls">
+            <button onclick="PonyStream.start(ponies)">Start</button>
+            <button onclick="PonyStream.stop()">Stop</button>
+            <button onclick="PonyStream.toggle(ponies)">Toggle</button>
+        </div>
+        <script>
+            PonyStream.load();
+        </script>
+    </body>
+    <script>
+    </script>
+</html>
+
