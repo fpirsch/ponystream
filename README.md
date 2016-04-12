@@ -5,7 +5,7 @@ A small library to free lots of ponies at the bottom of any element of your web 
 
 ![Ponies](ponystream.png)
 
-```
+```javascript
 // Starts in the <body> as soon as all images are loaded.
 PonyStream.load().then(PonyStream.start);
 
