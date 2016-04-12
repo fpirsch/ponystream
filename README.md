@@ -1,7 +1,7 @@
 # PonyStream
 
 A small library to free lots of ponies at the bottom of any element of your web page.
-[Demo here](ponystream.html).
+[Demo here](https://rawgit.com/fpirsch/ponystream/master/ponystream.html).
 
 ![Ponies](ponystream.png)
 
