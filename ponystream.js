@@ -160,15 +160,15 @@ var PonyStream = (function() {
 
     function newTrack(right) {
         var track = document.createElement('div');
+        track.className = 'pony-track';
         track.style.position = 'absolute';
         track.style.left = 0;
         track.style.right = 0;
         track.style.bottom = 0;
-        track.style.height = height + 'px';
+        track.style.top = 0;
         var scale = right ? 'scaleX(-1) ' : '';
         track.style[prefixedTransform] = scale + 'translateX(' + width + 'px)';
         track.style.whiteSpace = 'nowrap';
-        track.style.pointerEvents = 'none';
         return track;
     }
     
@@ -180,8 +180,18 @@ var PonyStream = (function() {
         if (!rightTrack.node) {
             width = container.getBoundingClientRect().width;
             if (width === 0) { return; }            // oups, on n'est pas affiché
-            container.appendChild(rightTrack.node = newTrack(true));
-            container.appendChild(leftTrack.node = newTrack());
+            var arena = document.createElement('div');
+            arena.className = 'pony-arena';
+            arena.style.position = 'absolute';
+            arena.style.left = 0;
+            arena.style.right = 0;
+            arena.style.bottom = 0;
+            arena.style.height = height + 'px';
+            arena.style.pointerEvents = 'none';
+            arena.style.overflow = 'hidden';
+            arena.appendChild(rightTrack.node = newTrack(true));
+            arena.appendChild(leftTrack.node = newTrack());
+            container.appendChild(arena);
         }
         if (!anim) {
             replacePonies = true;
@@ -215,7 +225,7 @@ var PonyStream = (function() {
         start: start,
         stop: function() { replacePonies = false; },
         toggle: toggle,
-        version: "1.0.0",
+        version: "1.0.1",
         pause: function() { cancelAnimationFrame(anim); }
     };
     
