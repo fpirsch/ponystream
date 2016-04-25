@@ -148,8 +148,8 @@ var PonyStream = (function() {
             maybeAddPonies(leftTrack);
         }
 
-        rightTrack.node.style.transform = 'scaleX(-1) translateX(' + (width - rightTrack.position) + 'px)';
-        leftTrack.node.style.transform = 'translateX(' + (width - leftTrack.position) + 'px)';
+        rightTrack.node.style[prefixedTransform] = 'scaleX(-1) translateX(' + (width - rightTrack.position) + 'px)';
+        leftTrack.node.style[prefixedTransform] = 'translateX(' + (width - leftTrack.position) + 'px)';
         if (rightTrack.ponyCount > 0 || leftTrack.ponyCount > 0) {
             anim = requestAnimationFrame(nextFrame);
         }
